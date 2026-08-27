@@ -19,6 +19,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float crouchCameraY = -0.1f;
     [SerializeField] private float crouchSmoothTime = 10f;
 
+    [Header("Animacje")]
+    [SerializeField] private Animator animator;
+    
+    private readonly int speedHash = Animator.StringToHash("Speed");
+    private readonly int isGroundedHash = Animator.StringToHash("IsGrounded");
+    private readonly int isCrouchingHash = Animator.StringToHash("IsCrouching");
+    private readonly int jumpHash = Animator.StringToHash("Jump");
+    
     private CharacterController controller;
     private Vector3 velocity;
     private bool isGrounded;
@@ -26,6 +34,10 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        if (animator == null)
+        {
+            animator = GetComponentInChildren<Animator>();
+        }
     }
 
     void Update()
@@ -69,8 +81,25 @@ public class PlayerMovement : MonoBehaviour
         if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            if (animator != null) animator.SetTrigger(jumpHash);
         }
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+        
+        UpdateAnimations(move.magnitude, isSprinting, isCrouching);
+    }
+
+    private void UpdateAnimations(float inputMagnitude, bool isSprinting, bool isCrouching)
+    {
+        if (animator == null) return;
+        float animSpeed = 0f;
+        if (inputMagnitude > 0.1f)
+        {
+            animSpeed = isSprinting ? 2f : 1f;
+        }
+        
+        animator.SetFloat(speedHash, animSpeed, 0.1f, Time.deltaTime);
+        animator.SetBool(isCrouchingHash, isCrouching);
+        animator.SetBool(isGroundedHash, isGrounded);
     }
 }
