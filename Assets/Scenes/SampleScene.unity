@@ -431,13 +431,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.28822166, y: -0, z: -0, w: 0.95756376}
-  m_LocalPosition: {x: 0.020000458, y: 2.477, z: -3.322}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.928898, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1796719365}
-  m_LocalEulerAnglesHint: {x: 33.503, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -709,13 +709,20 @@ PrefabInstance:
       propertyPath: m_AnimatePhysics
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 0adf939962450e446aeadc7a4142f511, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8879528566716807029, guid: 0adf939962450e446aeadc7a4142f511, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.04
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -1099630282392526794, guid: 0adf939962450e446aeadc7a4142f511, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1398345297}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0adf939962450e446aeadc7a4142f511, type: 3}
 --- !u!1 &832575517
@@ -857,45 +864,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1805745038}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1398345297 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a4cdb3b5aa795474b8487078cba029b5, type: 3}
+  m_PrefabInstance: {fileID: 1636322103}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1507180352 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -1099630282392526794, guid: 0adf939962450e446aeadc7a4142f511, type: 3}
+  m_PrefabInstance: {fileID: 747601775}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1636322103
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1507180352}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a4cdb3b5aa795474b8487078cba029b5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 22.914465
+      value: 0.26789618
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4cdb3b5aa795474b8487078cba029b5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 22.914465
+      value: 0.2678962
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4cdb3b5aa795474b8487078cba029b5, type: 3}
       propertyPath: m_LocalScale.z
-      value: 15.8598795
+      value: 0.18542008
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4cdb3b5aa795474b8487078cba029b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 34.27685
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4cdb3b5aa795474b8487078cba029b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.465
+      value: 0.00095
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4cdb3b5aa795474b8487078cba029b5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.365
+      value: 0.00459
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4cdb3b5aa795474b8487078cba029b5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4cdb3b5aa795474b8487078cba029b5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4cdb3b5aa795474b8487078cba029b5, type: 3}
       propertyPath: m_LocalRotation.y
@@ -903,7 +920,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4cdb3b5aa795474b8487078cba029b5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4cdb3b5aa795474b8487078cba029b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -915,7 +932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a4cdb3b5aa795474b8487078cba029b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a4cdb3b5aa795474b8487078cba029b5, type: 3}
       propertyPath: m_Name
@@ -1003,12 +1020,12 @@ Transform:
   m_GameObject: {fileID: 1796719361}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.22533, y: -1.938, z: 9.29618}
+  m_LocalPosition: {x: 39.22533, y: 0, z: 9.29618}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 330585546}
   - {fileID: 665844128}
+  - {fileID: 330585546}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1796719366
@@ -1023,17 +1040,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167c6ad1cbf5c964a9703c9836824fa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  walkSpeed: 6
-  sprintSpeed: 11
-  crouchSpeed: 3
+  walkSpeed: 4
+  sprintSpeed: 8
   jumpHeight: 1.5
   gravity: -19.62
   standingHeight: 2
-  crouchHeight: 1
   playerCamera: {fileID: 330585546}
-  standingCameraY: 0.7
-  crouchCameraY: 0.5
-  crouchSmoothTime: 10
+  standingCameraY: 1.91
   animator: {fileID: 665844127}
 --- !u!143 &1796719367
 CharacterController:
@@ -1057,7 +1070,7 @@ CharacterController:
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.08
+  m_SkinWidth: 0.01
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1805745037
@@ -1429,4 +1442,3 @@ SceneRoots:
   - {fileID: 1796719365}
   - {fileID: 2145018716}
   - {fileID: 1805745038}
-  - {fileID: 1636322103}
