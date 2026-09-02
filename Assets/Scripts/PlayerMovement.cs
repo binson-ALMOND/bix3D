@@ -20,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
     private readonly int speedHash = Animator.StringToHash("Speed");
     private readonly int isGroundedHash = Animator.StringToHash("IsGrounded");
     private readonly int jumpHash = Animator.StringToHash("Jump");
-    private static readonly int AttackHash = Animator.StringToHash("Attack");
     
     private CharacterController controller;
     private Vector3 velocity;
@@ -38,11 +37,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         if (Keyboard.current == null) return;
-        
-        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            PerformAttack();
-        }
         
         isGrounded = controller.isGrounded;
 
@@ -98,9 +92,5 @@ public class PlayerMovement : MonoBehaviour
         
         animator.SetFloat(speedHash, animSpeed, 0.1f, Time.deltaTime);
         animator.SetBool(isGroundedHash, isGrounded);
-    }
-    void PerformAttack()
-    {
-        animator.SetTrigger(AttackHash);
     }
 }
