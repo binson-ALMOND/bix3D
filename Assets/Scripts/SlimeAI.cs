@@ -78,11 +78,14 @@ public class SlimeAI : MonoBehaviour
         {
             isGrounded = true;
         }
-        
-        IDamageable target = collision.gameObject.GetComponent<IDamageable>();
-        if (target != null)
+
+        if (collision.gameObject.CompareTag(playerTag))
         {
-            target.TakeDamage(slimeDamage);
+            IDamageable target = collision.gameObject.GetComponent<IDamageable>();
+            if (target != null)
+            {
+                target.TakeDamage(slimeDamage);
+            }  
         }
     }
 
