@@ -15,4 +15,12 @@ public class AnimationEventRelay : MonoBehaviour
             playerCombat.OnAttackHit();
         }
     }
+
+    public void OnShootArrow()
+    {
+        if (playerCombat != null)
+        {
+            playerCombat.OnShootArrow();
+        }
+    }
 }
