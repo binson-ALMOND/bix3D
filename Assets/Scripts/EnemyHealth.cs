@@ -17,6 +17,11 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     [SerializeField] private Color hitColor = Color.red;
     private Color originalColor;
     private Material slimeMaterial;
+    
+    [Header("Efekt Śmierci")]
+    [SerializeField] private GameObject deathVFXPrefab;
+    [SerializeField] private float deathScaleSpeed = 8f;
+    
     void Start()
     {
         currentHealth = maxHealth;
@@ -73,6 +78,30 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     
     private void Die()
     {
+        if (deathVFXPrefab != null)
+        {
+            Instantiate(deathVFXPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+            
+            Collider col = GetComponent<Collider>();
+            if(col != null) col.enabled = false;
+            SlimeAI ai = GetComponent<SlimeAI>();
+            if(ai != null) ai.enabled = false;
+
+            StartCoroutine(ShrinkAndDestroy());
+        }
+    }
+
+    private IEnumerator ShrinkAndDestroy()
+    {
+        Vector3 originalScale = transform.localScale;
+        float timer = 0f;
+
+        while (timer < 0.2f)
+        {
+            timer += Time.deltaTime;
+            transform.localScale = Vector3.Lerp(originalScale, Vector3.zero, timer / 0.2f);
+            yield return null;
+        }
         Destroy(gameObject);
     }
 }
