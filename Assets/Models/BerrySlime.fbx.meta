@@ -55,7 +55,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.21878716
+      - time: 0.25139588
         functionName: OnJumpLaunch
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -157,7 +157,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: 
+    rootMotionBoneName: Bone.Base
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
@@ -165,7 +165,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0

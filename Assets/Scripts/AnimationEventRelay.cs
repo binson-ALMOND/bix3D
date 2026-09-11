@@ -23,4 +23,8 @@ public class AnimationEventRelay : MonoBehaviour
             playerCombat.OnShootArrow();
         }
     }
+    public void OnJumpLaunch()
+    {
+        GetComponentInParent<SlimeAI>()?.OnJumpLaunch();
+    }
 }

@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     private float currentHealth;
     [Header("UI")]
     [SerializeField] private Slider healthBar;
+    [SerializeField] private float smoothSpeed = 8f;
     [Header("I-Frames")] 
     [SerializeField] private float invincibilityDuration = 0.6f;
     private float lastDamageTime = -999f;
@@ -19,6 +20,13 @@ public class PlayerHealth : MonoBehaviour, IDamageable
             healthBar.value = currentHealth;
         }
     }
+    void Update()
+    {
+        if (healthBar != null && healthBar.value != currentHealth)
+        {
+            healthBar.value = Mathf.Lerp(healthBar.value, currentHealth, Time.deltaTime * smoothSpeed);
+        }
+    }
 
     public void TakeDamage(float damage)
     {
@@ -27,11 +35,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         lastDamageTime = Time.time;
         currentHealth -= damage;
         currentHealth = Mathf.Max(0, currentHealth);
-
-        if (healthBar != null)
-        {
-            healthBar.value = currentHealth;
-        }
         
         if (currentHealth <= 0)
         {
