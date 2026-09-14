@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 4665700745001237954}
   - component: {fileID: 4605294940225559947}
   m_Layer: 8
-  m_Name: BerrySlime
+  m_Name: PumpkinSlime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
