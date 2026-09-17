@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
@@ -21,8 +22,14 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     
     [Header("Efekt Śmierci")]
     [SerializeField] private GameObject deathVFXPrefab;
-    [SerializeField] private float deathScaleSpeed = 8f;
+    [SerializeField] private float deathDuration = 0.25f;
     
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip takeDamageSound;
+
+    
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -43,6 +50,11 @@ public class EnemyHealth : MonoBehaviour, IDamageable
             slimeMaterial = slimeRenderer.material;
             originalColor = slimeMaterial.color;
         }
+
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
     }
 
     void Update()
@@ -59,6 +71,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         currentHealth -= damage;
         currentHealth = Mathf.Max(0f , currentHealth);
 
+        PlayHitSound();
         if (slimeMaterial != null)
         {
             StopAllCoroutines();
@@ -76,6 +89,15 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         slimeMaterial.color = hitColor;
         yield return new WaitForSeconds(0.1f);
         slimeMaterial.color = originalColor;
+    }
+
+    private void PlayHitSound()
+    {
+        if (audioSource != null && takeDamageSound != null)
+        {
+            audioSource.pitch = UnityEngine.Random.Range(0.85f, 1.2f);
+            audioSource.PlayOneShot(takeDamageSound);
+        }
     }
     
     private void Die()
@@ -108,7 +130,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         while (timer < 0.2f)
         {
             timer += Time.deltaTime;
-            transform.localScale = Vector3.Lerp(originalScale, Vector3.zero, timer / 0.2f);
+            transform.localScale = Vector3.Lerp(originalScale, Vector3.zero, timer / deathDuration);
             yield return null;
         }
         Destroy(gameObject);

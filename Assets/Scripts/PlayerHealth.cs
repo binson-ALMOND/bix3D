@@ -10,9 +10,12 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField] private float smoothSpeed = 8f;
     [Header("I-Frames")] 
     [SerializeField] private float invincibilityDuration = 0.6f;
+    [Header("References")]
+    [SerializeField] private PlayerAudio playerAudio;
     private float lastDamageTime = -999f;
     void Start()
     {
+        if(playerAudio == null) playerAudio = GetComponent<PlayerAudio>();
         currentHealth = maxHealth;
         if (healthBar != null)
         {
@@ -31,7 +34,11 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public void TakeDamage(float damage)
     {
         if (Time.time < lastDamageTime + invincibilityDuration) return;
-        
+        if (playerAudio != null)
+        {
+            playerAudio.PlayHurtSound();
+        }
+        CameraShake.Instance.Shake(0.3f, 0.12f);
         lastDamageTime = Time.time;
         currentHealth -= damage;
         currentHealth = Mathf.Max(0, currentHealth);

@@ -114,6 +114,7 @@ public class PlayerCombat : MonoBehaviour
         if(bow != null) bow.SetActive(true);
     }
     public void OnAttackHit(){
+        CameraShake.Instance.Shake(0.1f, 0.04f);
         Vector3 attackCenter = transform.position + (transform.forward * attackDistance) + (Vector3.up*0.8f);
         Collider[] hitEnemies = Physics.OverlapSphere(attackCenter, attackRadius, enemyLayers);
         foreach (Collider hit in hitEnemies)
@@ -130,6 +131,7 @@ public class PlayerCombat : MonoBehaviour
     {
         if (arrowPrefab != null && arrowSpawnPoint != null)
         {
+            CameraShake.Instance.Shake(0.08f, 0.04f);
             if(visualArrow != null) visualArrow.SetActive(false);
             
             Camera mainCam = Camera.main;
