@@ -11,6 +11,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     [Header("Pasek HP")]
     [SerializeField] private Slider healthBar;
     [SerializeField] private float smoothSpeed = 8f;
+    private bool isDead = false;
 
     [Header("Hit Flash")] 
     [SerializeField] private Renderer slimeRenderer;
@@ -54,6 +55,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     
     public void TakeDamage(float damage)
     {
+        if(isDead) return;
         currentHealth -= damage;
         currentHealth = Mathf.Max(0f , currentHealth);
 
@@ -78,17 +80,24 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     
     private void Die()
     {
+        if(isDead) return;
+        isDead = true;
+        if (QuestManager.Instance != null)
+        {
+            QuestManager.Instance.RegisterSlimeKill();
+        }
         if (deathVFXPrefab != null)
         {
             Instantiate(deathVFXPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
-            
-            Collider col = GetComponent<Collider>();
-            if(col != null) col.enabled = false;
-            SlimeAI ai = GetComponent<SlimeAI>();
-            if(ai != null) ai.enabled = false;
-
-            StartCoroutine(ShrinkAndDestroy());
         }
+
+        Collider col = GetComponent<Collider>();
+        if(col != null) col.enabled = false;
+        SlimeAI ai = GetComponent<SlimeAI>();
+        if(ai != null) ai.enabled = false;
+
+        StartCoroutine(ShrinkAndDestroy());
+        
     }
 
     private IEnumerator ShrinkAndDestroy()

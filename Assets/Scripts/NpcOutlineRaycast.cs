@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class NpcOutlineRaycast : MonoBehaviour
 {
     [SerializeField] private float reachDistance = 5f;
     [SerializeField] private LayerMask interactableLayer;
-
+    [SerializeField] private QuestManager QuestManager;
     private Outline currentOutline;
     
     void Update()
@@ -22,9 +23,14 @@ public class NpcOutlineRaycast : MonoBehaviour
                     currentOutline = hitOutline;
                     currentOutline.enabled = true;
                 }
+                if(Keyboard.current.eKey.wasPressedThisFrame)
+                {
+                    QuestManager.Instance.StartSlimeQuest();
+                }
                 return;
             }
         }
+        
         DisableCurrentOutline();
     }
 

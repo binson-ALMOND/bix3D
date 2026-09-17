@@ -29,9 +29,11 @@ public class PlayerCombat : MonoBehaviour
     
     [Header("Animacja")] 
     [SerializeField] private Animator animator;
-
     [SerializeField] private Animator bowAnimator;
 
+    [Header("Dostępność broni")] 
+    public bool isBowUnlocked = false;
+    
     private static readonly int AttackHash = Animator.StringToHash("Attack");
     private static readonly int BowShootHash = Animator.StringToHash("BowShoot");
     private float lastAttackTime = -999f;
@@ -56,7 +58,15 @@ public class PlayerCombat : MonoBehaviour
             }
             if (Keyboard.current.digit2Key.wasPressedThisFrame)
             {
-                EquipBow();
+                if (isBowUnlocked)
+                {
+                    EquipBow();
+                }
+                else
+                {
+                    Debug.Log("Łuk zablokowany");
+                }
+                
             }
         }
         
@@ -98,6 +108,7 @@ public class PlayerCombat : MonoBehaviour
     }
     public void EquipBow()
     {
+        if (!isBowUnlocked) return;
         currentWeapon = WeaponType.Bow;
         if(sword != null) sword.SetActive(false);
         if(bow != null) bow.SetActive(true);
@@ -162,6 +173,11 @@ public class PlayerCombat : MonoBehaviour
                 arrowRb.linearVelocity = shootDirection * arrowForce;
             }
         }
+    }
+
+    public void UnlockBow()
+    {
+        isBowUnlocked = true;
     }
 
     private void OnDrawGizmosSelected()
