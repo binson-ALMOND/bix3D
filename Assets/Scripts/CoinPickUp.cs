@@ -22,7 +22,7 @@ public class CoinPickup : MonoBehaviour
     {
         Vector3 startPos = transform.position;
         
-        Vector3 randomOffset = new Vector3(Random.Range(-1f, 1f), -0.5f, Random.Range(-1f, 1f));
+        Vector3 randomOffset = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
         Vector3 endPos = startPos + randomOffset;
 
         float time = 0f;
