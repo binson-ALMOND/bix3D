@@ -32,6 +32,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     [SerializeField] private GameObject coinPrefab;
     [SerializeField] private int coinsToDrop;
     
+    
 
     void Start()
     {
