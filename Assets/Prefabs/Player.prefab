@@ -1049,6 +1049,7 @@ GameObject:
   - component: {fileID: 4682306055036105017}
   - component: {fileID: 7274201694478965264}
   - component: {fileID: 4164054033923428418}
+  - component: {fileID: 2543393023444440715}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -1184,6 +1185,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   smoothSpeed: 8
   invincibilityDuration: 0.6
+  playerAudio: {fileID: 0}
 --- !u!114 &4164054033923428418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1214,6 +1216,18 @@ MonoBehaviour:
   animator: {fileID: 2882290462727320133}
   bowAnimator: {fileID: 3774968761143348254}
   isBowUnlocked: 0
+--- !u!114 &2543393023444440715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6442868409426245898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d0ab46d55a89d4d8745499852cc1d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &6802850509994735416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,6 +1843,11 @@ MonoBehaviour:
   audioSource: {fileID: 8913547157574113413}
   bowSound: {fileID: 8300000, guid: e794ff490ec524046bb4d3b8aa39e76d, type: 3}
   swordSwingSound: {fileID: 0}
+  swordImpactSound: {fileID: 0}
+  hurtSound: {fileID: 0}
+  stepSound: {fileID: 0}
+  stepCooldown: 0.18
+  characterController: {fileID: 0}
 --- !u!1 &9008526870867947636
 GameObject:
   m_ObjectHideFlags: 0

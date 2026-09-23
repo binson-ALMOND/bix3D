@@ -517,9 +517,11 @@ MonoBehaviour:
   slimeRenderer: {fileID: 0}
   hitColor: {r: 1, g: 0, b: 0, a: 1}
   deathVFXPrefab: {fileID: 5808144442068414626, guid: e7c36fb631a250748a5ba1689608eef0, type: 3}
-  deathScaleSpeed: 8
+  deathDuration: 0.25
   audioSource: {fileID: 8285324520222379007}
   takeDamageSound: {fileID: 8300000, guid: c025546b690387148a8fb400d0a70523, type: 3}
+  coinPrefab: {fileID: 7491691531488712721, guid: 3258bab02a5064646a494553e4f42a1e, type: 3}
+  coinsToDrop: 3
 --- !u!82 &8285324520222379007
 AudioSource:
   m_ObjectHideFlags: 0

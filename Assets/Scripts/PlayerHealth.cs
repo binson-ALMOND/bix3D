@@ -49,8 +49,14 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         }
     }
 
+    public void HealToMax()
+    {
+        currentHealth = maxHealth;
+    }
+
     private void Die()
     {
         Debug.Log("Gracz zginął!");
     }
+    
 }

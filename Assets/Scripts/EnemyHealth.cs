@@ -28,6 +28,9 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip takeDamageSound;
 
+    [Header("Loot")]
+    [SerializeField] private GameObject coinPrefab;
+    [SerializeField] private int coinsToDrop;
     
 
     void Start()
@@ -111,6 +114,13 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         if (deathVFXPrefab != null)
         {
             Instantiate(deathVFXPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+        }
+        if (coinPrefab != null)
+        {
+            for (int i = 0; i < coinsToDrop; i++)
+            {
+                Instantiate(coinPrefab, transform.position + Vector3.up * 0.5f, coinPrefab.transform.rotation);
+            }
         }
 
         Collider col = GetComponent<Collider>();
