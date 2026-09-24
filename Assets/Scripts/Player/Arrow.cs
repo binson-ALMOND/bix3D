@@ -47,7 +47,7 @@ public class Arrow : MonoBehaviour
         rb.isKinematic = true;
         rb.linearVelocity = Vector3.zero;
         GetComponent<Collider>().enabled = false;
-        transform.parent = collision.transform;
+        transform.SetParent(collision.transform);
         
         Destroy(gameObject, lifetime);
     }

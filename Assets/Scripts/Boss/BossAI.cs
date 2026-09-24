@@ -18,6 +18,14 @@ public class BossAI : MonoBehaviour
     [SerializeField] private float screamCooldown = 12f;
     [Header("Referencje")]
     [SerializeField] private Transform player;
+
+    [Header("Obrażenia w zwarciu")] 
+    [SerializeField] private BossWeaponHitbox weaponHitbox;
+    [SerializeField] private int lightAttackDamage = 1;
+    [SerializeField] private int wideAttackDamage = 2;
+
+    private int currentAttackDamage;
+    
     private NavMeshAgent agent;
     private Animator animator;
     
@@ -144,6 +152,10 @@ public class BossAI : MonoBehaviour
         isExecutingAction = true;
         canRotate = true;
         agent.isStopped = true;
+
+        if (action == "AttackLight") currentAttackDamage = lightAttackDamage;
+        if (action == "AttackWide") currentAttackDamage = wideAttackDamage;
+        
         animator.SetTrigger(action);
     }
 
@@ -151,6 +163,7 @@ public class BossAI : MonoBehaviour
     {
         isExecutingAction = false;
         canRotate = true;
+        weaponHitbox?.DisableWeaponHitbox();
     }
     
     private void RotateTowardsPlayer()
@@ -185,5 +198,15 @@ public class BossAI : MonoBehaviour
     public void UnlockRotation()
     {
         canRotate = true;
+    }
+
+    public void EnableWeaponHitbox()
+    {
+        weaponHitbox?.EnableWeaponHitbox(currentAttackDamage);
+    }
+
+    public void DisableWeaponHitbox()
+    {
+        weaponHitbox?.DisableWeaponHitbox();
     }
 }
