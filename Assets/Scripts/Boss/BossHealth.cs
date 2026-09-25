@@ -11,7 +11,7 @@ public class BossHealth : MonoBehaviour, IDamageable
 
     [Header("UI")] 
     [SerializeField] private Slider healthSlider;
-
+    [SerializeField] private Canvas bossCanvas;
     [Header("Komponenty do wyłączenia po śmierci")] 
     [SerializeField] private Animator animator;
     [SerializeField] private BossAI bossAI;
@@ -60,9 +60,10 @@ public class BossHealth : MonoBehaviour, IDamageable
         if (mainCollider != null) mainCollider.enabled = false;
         if (animator != null) animator.SetTrigger("Die");
 
-        if (healthSlider != null)
+        
+        if (bossCanvas != null)
         {
-            Destroy(healthSlider.gameObject);
+            Destroy(bossCanvas.gameObject);
         }
     }
 }

@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b1d857b49d796d4996a7844859b4c86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Arrow
-  damage: 40
+  damage: 1
   lifetime: 15
   flyAudioSource: {fileID: 3356998783536613247}
   impactSound: {fileID: 8300000, guid: 3a8dc58aae6f9e247b7d732cbe6ee1d3, type: 3}

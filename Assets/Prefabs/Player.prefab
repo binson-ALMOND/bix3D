@@ -197,7 +197,7 @@ MonoBehaviour:
   currentWeapon: 0
   sword: {fileID: 8751644944342204395}
   bow: {fileID: 927257775808570307}
-  swordDamage: 1
+  swordDamage: 2
   attackRadius: 1.5
   attackDistance: 1.5
   swordCooldown: 0.5
