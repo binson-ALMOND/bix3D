@@ -138,7 +138,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
+  m_Height: 2.09
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -164,7 +164,7 @@ MonoBehaviour:
   standingHeight: 1.9
   playerCamera: {fileID: 3771182267175851371}
   standingCameraY: 1.9
-  animator: {fileID: 0}
+  animator: {fileID: 8419302026737127229}
 --- !u!114 &2127240569448135114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
   currentWeapon: 0
   sword: {fileID: 8751644944342204395}
   bow: {fileID: 927257775808570307}
-  swordDamage: 2
+  swordDamage: 40
   attackRadius: 1.5
   attackDistance: 1.5
   swordCooldown: 0.5
@@ -211,7 +211,7 @@ MonoBehaviour:
   visualArrow: {fileID: 3406357530229490726}
   animator: {fileID: 8419302026737127229}
   bowAnimator: {fileID: 7891079977957592806}
-  isBowUnlocked: 0
+  isBowUnlocked: 1
 --- !u!114 &3321379474417568297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1516,7 +1516,7 @@ Transform:
   m_GameObject: {fileID: 7080314093491737786}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0000007791748, y: 0.00000027446313, z: 0.0000034523991}
+  m_LocalPosition: {x: 0.000000029498324, y: 0.00000069335783, z: 0.0000034606305}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

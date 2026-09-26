@@ -17,9 +17,11 @@ public class BossHealth : MonoBehaviour, IDamageable
     [SerializeField] private BossAI bossAI;
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Collider mainCollider;
-    
+    [Header("Muzyka i Walka")]
+    private bool isEncounterStarted = false;
     void Start()
     {
+        if(bossCanvas != null) bossCanvas.gameObject.SetActive(false);
         currentHealth = maxHealth;
         if (healthSlider != null)
         {
@@ -64,6 +66,18 @@ public class BossHealth : MonoBehaviour, IDamageable
         if (bossCanvas != null)
         {
             Destroy(bossCanvas.gameObject);
+        }
+        MusicManager.Instance.SwitchToExplorationMusic();
+    }
+
+    public void StartEncounter()
+    {
+        if (isEncounterStarted || isDead) return;
+        if(bossCanvas != null) bossCanvas.gameObject.SetActive(true);
+        if(healthSlider != null) healthSlider.gameObject.SetActive(true);
+        if (MusicManager.Instance != null)
+        {
+            MusicManager.Instance.SwitchToBossMusic();
         }
     }
 }
