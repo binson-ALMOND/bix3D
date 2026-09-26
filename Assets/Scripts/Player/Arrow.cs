@@ -38,16 +38,26 @@ public class Arrow : MonoBehaviour
             flyAudioSource.pitch = Random.Range(0.9f, 1.1f);
             AudioSource.PlayClipAtPoint(impactSound, transform.position,1);
         }
+
+        float finalDamage = damage;
+        string hitPart = collision.collider.gameObject.name;
+        if (hitPart.Contains("Head"))
+        {
+            finalDamage *= 2f;
+            Debug.Log("Headshot, dmg *2");
+        }
         IDamageable target = collision.gameObject.GetComponent<IDamageable>() ?? collision.gameObject.GetComponentInParent<IDamageable>();
         if (target != null)
         {
-            target.TakeDamage(damage);
+            target.TakeDamage(finalDamage);
         }
 
-        rb.isKinematic = true;
+        
         rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        rb.isKinematic = true;
         GetComponent<Collider>().enabled = false;
-        transform.parent = collision.transform;
+        transform.SetParent(collision.transform);
         
         Destroy(gameObject, lifetime);
     }
