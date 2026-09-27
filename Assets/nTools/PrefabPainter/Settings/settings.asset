@@ -1984,7 +1984,7 @@ MonoBehaviour:
     brushes:
     - name: grass random
       settings:
-        brushRadius: 3.55
+        brushRadius: 3.75
         brushSpacing: 0.53
         brushOverlapCheckMode: 1
         brushOverlapDistance: 0.1
@@ -2123,7 +2123,7 @@ MonoBehaviour:
       customPreviewImage: {fileID: 0}
     - name: Flower random
       settings:
-        brushRadius: 17.5
+        brushRadius: 4.56
         brushSpacing: 5
         brushOverlapCheckMode: 1
         brushOverlapDistance: 1
@@ -2433,7 +2433,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 3
-      selected: 0
+      selected: 1
       colorTag: 0
       customPreviewImage: {fileID: 0}
     - name: Rock random
@@ -2748,7 +2748,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
       customPreviewImage: {fileID: 0}
     - name: 'Boudler random '

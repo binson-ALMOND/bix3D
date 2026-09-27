@@ -521,7 +521,7 @@ MonoBehaviour:
   audioSource: {fileID: 8285324520222379007}
   takeDamageSound: {fileID: 8300000, guid: c025546b690387148a8fb400d0a70523, type: 3}
   coinPrefab: {fileID: 6345938772755984441, guid: 03a5ba6550988ed4cbb3345e8d8a651a, type: 3}
-  coinsToDrop: 3
+  coinsToDrop: 4
 --- !u!82 &8285324520222379007
 AudioSource:
   m_ObjectHideFlags: 0

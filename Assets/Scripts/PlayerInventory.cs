@@ -19,7 +19,7 @@ public class PlayerInventory : MonoBehaviour
     {
         if (coinText != null)
         {
-            coinText.text = $"Coins x{coins}" ;
+            coinText.text = $"x{coins}" ;
         }
     }
     public bool TrySpendCoins(int amount)
