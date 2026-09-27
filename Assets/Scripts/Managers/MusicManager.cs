@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class MusicManager : MonoBehaviour
 {
@@ -7,9 +8,10 @@ public class MusicManager : MonoBehaviour
     [Header("Audio Sources")]
     [SerializeField] private AudioSource explorationSource;
     [SerializeField] private AudioSource bossSource;
+    [SerializeField] private AudioClip victoryJingle;
 
     [Range(0f, 1f)] [SerializeField] private float targetVolume = 0.211f;
-
+    [SerializeField] private float delayAfterJingle = 0.5f;
     private void Awake()
     {
         if (Instance == null)
@@ -60,6 +62,31 @@ public class MusicManager : MonoBehaviour
         if (bossSource != null)
         {
             bossSource.Stop();
+        }
+
+        if (explorationSource != null)
+        {
+            explorationSource.time = 0f;
+            explorationSource.Play();
+        }
+    }
+
+    public void TriggerVictory()
+    {
+        StartCoroutine(VictorySequenceRoutine());
+    }
+
+    private IEnumerator VictorySequenceRoutine()
+    {
+        if (bossSource != null)
+        {
+            bossSource.Stop();
+        }
+
+        if (victoryJingle != null && bossSource != null)
+        {
+            bossSource.PlayOneShot(victoryJingle);
+            yield return new WaitForSeconds(victoryJingle.length + delayAfterJingle);
         }
 
         if (explorationSource != null)
