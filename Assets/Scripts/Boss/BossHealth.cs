@@ -67,7 +67,7 @@ public class BossHealth : MonoBehaviour, IDamageable
         {
             Destroy(bossCanvas.gameObject);
         }
-        MusicManager.Instance.SwitchToExplorationMusic();
+        MusicManager.Instance.TriggerVictory();
     }
 
     public void StartEncounter()

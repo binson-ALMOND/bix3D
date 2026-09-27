@@ -209,6 +209,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1961502001}
+    - target: {fileID: 2391904471342679474, guid: 0b2ecd5a534819e4e987eae5fec5643e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.052
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391904471342679474, guid: 0b2ecd5a534819e4e987eae5fec5643e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.004
+      objectReference: {fileID: 0}
+    - target: {fileID: 2391904471342679474, guid: 0b2ecd5a534819e4e987eae5fec5643e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 2792210000740942015, guid: 0b2ecd5a534819e4e987eae5fec5643e, type: 3}
       propertyPath: bossCanvas
       value: 
@@ -710,7 +722,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MusicManager
   explorationSource: {fileID: 1614468880}
   bossSource: {fileID: 1614468883}
+  victoryJingle: {fileID: 8300000, guid: 1d196df8b05b04a4589e6fa6bd571cd3, type: 3}
   targetVolume: 0.239
+  delayAfterJingle: 0.5
 --- !u!82 &1614468883
 AudioSource:
   m_ObjectHideFlags: 0
@@ -722,7 +736,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 492f4ba103e7dfe4bbb2f022c2b5d912, type: 3}
+  m_Resource: {fileID: 8300000, guid: 62b74c4c8ff8486459e4a9aa32c1e4d6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.211
   m_Pitch: 1
