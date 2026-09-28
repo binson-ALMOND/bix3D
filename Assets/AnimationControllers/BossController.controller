@@ -156,7 +156,7 @@ AnimatorStateMachine:
     m_Position: {x: 190, y: -300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7039776616891598810}
-    m_Position: {x: 198.0571, y: -360.58368, z: 0}
+    m_Position: {x: 140, y: -400, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 4612954574871388067}
@@ -296,7 +296,7 @@ AnimatorController:
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
-    m_DefaultBool: 1
+    m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
   - m_Name: Scream
     m_Type: 9
@@ -459,7 +459,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 5059390948309792630, guid: 764102160f1c7a24b99dc36d89c38afd, type: 3}
+  m_Motion: {fileID: 2414182289394182181, guid: 764102160f1c7a24b99dc36d89c38afd, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

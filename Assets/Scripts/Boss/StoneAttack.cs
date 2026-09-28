@@ -8,6 +8,9 @@ public class StoneAttack : MonoBehaviour
     [SerializeField] private float popUpSpeed = 16f;
     [SerializeField] private float lifetime = 3.5f;
 
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip emergeSFX;
+    [SerializeField] private AudioClip hideSFX;
     private Vector3 targetPosition;
     private bool hasDealtDamage = false;
     
@@ -23,12 +26,22 @@ public class StoneAttack : MonoBehaviour
 
     private IEnumerator EmergeRoutine()
     {
+        if (emergeSFX != null)
+        {
+            audioSource.PlayOneShot(emergeSFX);
+        }
         while (Vector3.Distance(transform.position, targetPosition) > 0.05f)
         {
             transform.position = Vector3.MoveTowards(transform.position,targetPosition,popUpSpeed * Time.deltaTime);
             yield return null;
         }
         transform.position = targetPosition;
+        if (hideSFX != null)
+        {
+            yield return new WaitForSeconds(lifetime-0.5f);
+            audioSource.PlayOneShot(hideSFX);
+        }
+        
     }
 
     private void OnTriggerEnter(Collider other)

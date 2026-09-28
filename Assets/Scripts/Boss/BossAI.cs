@@ -53,7 +53,6 @@ public class BossAI : MonoBehaviour
     private void Update()
     {
         if (player == null) return;
-
         if (isExecutingAction)
         {
             agent.isStopped = true;
