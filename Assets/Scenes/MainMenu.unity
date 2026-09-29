@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.176
+  m_FogDensity: 0.173
   m_LinearFogStart: 6.7
   m_LinearFogEnd: 12.78
   m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
@@ -190,6 +190,10 @@ PrefabInstance:
     - target: {fileID: 5581613610554002416, guid: e76d094660e5e994a90f29f70496f1ab, type: 3}
       propertyPath: m_Name
       value: Campfire
+      objectReference: {fileID: 0}
+    - target: {fileID: 6570363765393505455, guid: e76d094660e5e994a90f29f70496f1ab, type: 3}
+      propertyPath: NoiseModule.strength.scalar
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8629354884901770114, guid: e76d094660e5e994a90f29f70496f1ab, type: 3}
       propertyPath: m_LocalPosition.x
