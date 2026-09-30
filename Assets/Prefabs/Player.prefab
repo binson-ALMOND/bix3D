@@ -182,6 +182,7 @@ MonoBehaviour:
   smoothSpeed: 8
   invincibilityDuration: 0.6
   playerAudio: {fileID: 658472941428310933}
+  gameOverManager: {fileID: 0}
 --- !u!114 &1912635384281752922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,7 +198,7 @@ MonoBehaviour:
   currentWeapon: 0
   sword: {fileID: 8751644944342204395}
   bow: {fileID: 927257775808570307}
-  swordDamage: 2
+  swordDamage: 80
   attackRadius: 1.5
   attackDistance: 1.5
   swordCooldown: 0.5
@@ -1516,7 +1517,7 @@ Transform:
   m_GameObject: {fileID: 7080314093491737786}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.000000029498324, y: 0.00000069335783, z: 0.0000034606305}
+  m_LocalPosition: {x: -0.0000007791748, y: 0.00000027446313, z: 0.0000034523991}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -12,6 +12,7 @@ public class BossHealth : MonoBehaviour, IDamageable
     [Header("UI")] 
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Canvas bossCanvas;
+    [SerializeField] private GameOverManager gameOverManager;
     [Header("Komponenty do wyłączenia po śmierci")] 
     [SerializeField] private Animator animator;
     [SerializeField] private BossAI bossAI;
@@ -72,6 +73,12 @@ public class BossHealth : MonoBehaviour, IDamageable
         {
             MusicManager.Instance.TriggerVictory();
         }
+
+        if (gameOverManager != null)
+        {
+            gameOverManager.TriggerVictory();
+        }
+        
     }
 
     public void StartEncounter()

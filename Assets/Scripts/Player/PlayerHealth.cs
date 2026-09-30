@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [Header("References")]
     [SerializeField] private PlayerAudio playerAudio;
     [SerializeField] private GameOverManager gameOverManager;
+
     private float lastDamageTime = -999f;
     void Start()
     {
@@ -57,6 +58,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private void Die()
     {
+        CameraShake.Instance.StopShake();
         if (gameOverManager != null)
         {
             gameOverManager.TriggerGameOver();
