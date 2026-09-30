@@ -858,26 +858,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1078200183866576807, guid: 9e76eff8e898fb6428f816cd402d054d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.000000029498324
-      objectReference: {fileID: 0}
-    - target: {fileID: 1078200183866576807, guid: 9e76eff8e898fb6428f816cd402d054d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.00000069335783
-      objectReference: {fileID: 0}
-    - target: {fileID: 1078200183866576807, guid: 9e76eff8e898fb6428f816cd402d054d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.0000034606305
-      objectReference: {fileID: 0}
     - target: {fileID: 2127240569448135114, guid: 9e76eff8e898fb6428f816cd402d054d, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1719690149}
-    - target: {fileID: 2127240569448135114, guid: 9e76eff8e898fb6428f816cd402d054d, type: 3}
-      propertyPath: cameraShake
-      value: 
-      objectReference: {fileID: 1586776165}
     - target: {fileID: 2127240569448135114, guid: 9e76eff8e898fb6428f816cd402d054d, type: 3}
       propertyPath: gameOverManager
       value: 
@@ -886,14 +870,6 @@ PrefabInstance:
       propertyPath: coinText
       value: 
       objectReference: {fileID: 603135377}
-    - target: {fileID: 3771182267175851371, guid: 9e76eff8e898fb6428f816cd402d054d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.188
-      objectReference: {fileID: 0}
-    - target: {fileID: 6327605235054543873, guid: 9e76eff8e898fb6428f816cd402d054d, type: 3}
-      propertyPath: near clip plane
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 7135191618247562516, guid: 9e76eff8e898fb6428f816cd402d054d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.85
@@ -996,17 +972,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d92554081e6d48f4ba4203f5973186d7, type: 3}
---- !u!114 &1586776165 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3440126713917312433, guid: 9e76eff8e898fb6428f816cd402d054d, type: 3}
-  m_PrefabInstance: {fileID: 1522388325}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a58bea956a97f042bf68b96a020ce1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraShake
 --- !u!1 &1614468879 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 556038031267557685, guid: d92554081e6d48f4ba4203f5973186d7, type: 3}
@@ -1359,10 +1324,6 @@ PrefabInstance:
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 2107830091}
-    - target: {fileID: 933701768807159367, guid: b271a5b28a3f4084b97110bf8cedd990, type: 3}
-      propertyPath: delayBeforeVictoryPanel
-      value: 4.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3402172029065289422, guid: b271a5b28a3f4084b97110bf8cedd990, type: 3}
       propertyPath: m_LocalPosition.x
       value: 439

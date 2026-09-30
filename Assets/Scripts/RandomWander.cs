@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.InputSystem.Android;
 using Random = UnityEngine.Random;
 [RequireComponent(typeof(NavMeshAgent))]
 public class RandomWander : MonoBehaviour

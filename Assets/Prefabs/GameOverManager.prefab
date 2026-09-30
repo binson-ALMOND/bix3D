@@ -46,11 +46,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameOverManager
   gameOverPanel: {fileID: 0}
+  victoryPanel: {fileID: 0}
   playerUI: {fileID: 0}
   audioSource: {fileID: 6323822837723291077}
   gameOverSong: {fileID: 8300000, guid: e46d9f168db5d414498c7498ec79740e, type: 3}
   musicPlayer: {fileID: 0}
   mainMenuSceneName: MainMenu
+  delayBeforeVictoryPanel: 4.5
 --- !u!82 &6323822837723291077
 AudioSource:
   m_ObjectHideFlags: 0
