@@ -13,6 +13,8 @@ public class BossGroundSlam : MonoBehaviour
     [SerializeField] private float spikeSpacing = 1.6f;
     [SerializeField] private float delayBetweenSpikes = 0.06f;
     [SerializeField] private float startOffset = 2.0f;
+    [SerializeField] private float minScale = 0.9f;
+    [SerializeField] private float maxScale = 1.1f;
 
     public void SpawnGroundSlamShockwave()
     {
@@ -30,8 +32,11 @@ public class BossGroundSlam : MonoBehaviour
 
             if (Physics.Raycast(targetXz + Vector3.up * 5f, Vector3.down, out RaycastHit hit, 10f, groundLayer))
             {
+                
                 Quaternion randomRot = Quaternion.Euler(0, Random.Range(0, 360), 0);
-                Instantiate(rockPrefab, hit.point, randomRot);
+                GameObject rock = Instantiate(rockPrefab, hit.point, randomRot);
+                float randomScale = Random.Range(minScale,maxScale);
+                rock.transform.localScale = Vector3.one * randomScale;
             }
             yield return new WaitForSeconds(delayBetweenSpikes);
         }

@@ -1,9 +1,10 @@
 using UnityEngine;
 using System.Collections;
+
 public class CameraShake : MonoBehaviour
 {
     public static CameraShake Instance { get; private set; }
-    
+
     private Vector3 initialPosition;
     private Coroutine currentShake;
 
@@ -11,14 +12,14 @@ public class CameraShake : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
-        
+
         initialPosition = transform.localPosition;
     }
 
 
     public void Shake(float duration = 0.1f, float strength = 0.05f)
     {
-        if(currentShake != null) StopCoroutine(currentShake);
+        if (currentShake != null) StopCoroutine(currentShake);
         currentShake = StartCoroutine(ShakeRoutine(duration, strength));
     }
 
@@ -33,8 +34,14 @@ public class CameraShake : MonoBehaviour
             elapsed += Time.deltaTime;
             yield return null;
         }
-        
+
         transform.localPosition = initialPosition;
         currentShake = null;
+    }
+
+    public void StopShake()
+    {
+        StopAllCoroutines();
+        transform.localPosition = new  Vector3(0f, initialPosition.y, initialPosition.z);
     }
 }

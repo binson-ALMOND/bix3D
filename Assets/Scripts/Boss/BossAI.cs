@@ -1,7 +1,6 @@
 using NUnit.Framework.Constraints;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.InputSystem.Android;
 using UnityEngine.UI;
 
 public class BossAI : MonoBehaviour
@@ -53,7 +52,6 @@ public class BossAI : MonoBehaviour
     private void Update()
     {
         if (player == null) return;
-
         if (isExecutingAction)
         {
             agent.isStopped = true;

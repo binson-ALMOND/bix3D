@@ -12,6 +12,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField] private float invincibilityDuration = 0.6f;
     [Header("References")]
     [SerializeField] private PlayerAudio playerAudio;
+    [SerializeField] private GameOverManager gameOverManager;
+
     private float lastDamageTime = -999f;
     void Start()
     {
@@ -56,7 +58,11 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private void Die()
     {
-        Debug.Log("Gracz zginął!");
-    }
-    
+        CameraShake.Instance.StopShake();
+        if (gameOverManager != null)
+        {
+            gameOverManager.TriggerGameOver();
+            GetComponent<PlayerMovement>().enabled = false;  
+        }
+    } 
 }

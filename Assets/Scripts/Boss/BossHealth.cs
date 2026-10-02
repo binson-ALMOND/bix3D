@@ -12,13 +12,14 @@ public class BossHealth : MonoBehaviour, IDamageable
     [Header("UI")] 
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Canvas bossCanvas;
+    [SerializeField] private GameOverManager gameOverManager;
     [Header("Komponenty do wyłączenia po śmierci")] 
     [SerializeField] private Animator animator;
     [SerializeField] private BossAI bossAI;
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Collider mainCollider;
     [Header("Muzyka i Walka")]
-    private bool isEncounterStarted = false;
+    public bool isEncounterStarted = false;
     void Start()
     {
         if(bossCanvas != null) bossCanvas.gameObject.SetActive(false);
@@ -67,7 +68,17 @@ public class BossHealth : MonoBehaviour, IDamageable
         {
             Destroy(bossCanvas.gameObject);
         }
-        MusicManager.Instance.TriggerVictory();
+
+        if (MusicManager.Instance != null)
+        {
+            MusicManager.Instance.TriggerVictory();
+        }
+
+        if (gameOverManager != null)
+        {
+            gameOverManager.TriggerVictory();
+        }
+        
     }
 
     public void StartEncounter()
