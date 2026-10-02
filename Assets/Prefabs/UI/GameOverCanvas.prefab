@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 7576224551418103186}
   - component: {fileID: 4720473649518969877}
   m_Layer: 5
-  m_Name: CreditsText
+  m_Name: ExitToMenuText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

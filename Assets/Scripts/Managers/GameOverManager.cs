@@ -73,7 +73,8 @@ public class GameOverManager : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        
+        isGameOver = false;
+
     }
 
     public void LoadMainMenu()

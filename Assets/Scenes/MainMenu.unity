@@ -473,6 +473,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6357964616218792436, guid: 977076b8c620ed640b2d3f2e6df1bedd, type: 3}
+      propertyPath: gameSceneName
+      value: Main Game
+      objectReference: {fileID: 0}
     - target: {fileID: 6828203142431306760, guid: 977076b8c620ed640b2d3f2e6df1bedd, type: 3}
       propertyPath: m_Name
       value: MenuUI

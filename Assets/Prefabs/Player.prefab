@@ -198,7 +198,7 @@ MonoBehaviour:
   currentWeapon: 0
   sword: {fileID: 8751644944342204395}
   bow: {fileID: 927257775808570307}
-  swordDamage: 80
+  swordDamage: 2
   attackRadius: 1.5
   attackDistance: 1.5
   swordCooldown: 0.5
@@ -212,7 +212,7 @@ MonoBehaviour:
   visualArrow: {fileID: 3406357530229490726}
   animator: {fileID: 8419302026737127229}
   bowAnimator: {fileID: 7891079977957592806}
-  isBowUnlocked: 1
+  isBowUnlocked: 0
 --- !u!114 &3321379474417568297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1517,7 +1517,7 @@ Transform:
   m_GameObject: {fileID: 7080314093491737786}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.000000029498324, y: 0.00000069335783, z: 0.0000034606305}
+  m_LocalPosition: {x: -0.00000072203807, y: 0.00000027566992, z: -0.00000036233666}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
