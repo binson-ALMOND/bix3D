@@ -2433,7 +2433,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 3
-      selected: 1
+      selected: 0
       colorTag: 0
       customPreviewImage: {fileID: 0}
     - name: Rock random
@@ -3698,10 +3698,10 @@ MonoBehaviour:
       customPreviewImage: {fileID: 0}
     - name: Pine Trees random  copy
       settings:
-        brushRadius: 14.42
-        brushSpacing: 2.35
+        brushRadius: 0.41
+        brushSpacing: 1.03
         brushOverlapCheckMode: 1
-        brushOverlapDistance: 10
+        brushOverlapDistance: 5
         brushOverlapCheckObjects: 0
         brushOverlapCheckLayers:
           serializedVersion: 2
@@ -4008,7 +4008,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 0
+      selected: 1
       colorTag: 0
       customPreviewImage: {fileID: 0}
     - name: Trees random copy
@@ -4891,7 +4891,7 @@ MonoBehaviour:
   paintOnSelected: 0
   paintLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 65
   ignoreLayers:
     serializedVersion: 2
     m_Bits: 32
