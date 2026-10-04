@@ -499,6 +499,9 @@ MonoBehaviour:
   animator: {fileID: 0}
   jumpTriggerName: Jump
   slimeDamage: 1
+  walkSound: {fileID: 8300000, guid: a4212d02397b39e4baf6ddb798d32ae5, type: 3}
+  landSound: {fileID: 8300000, guid: c30ea397749c58948972968fc306e5ee, type: 3}
+  audioSource: {fileID: 8285324520222379007}
 --- !u!114 &4605294940225559947
 MonoBehaviour:
   m_ObjectHideFlags: 0

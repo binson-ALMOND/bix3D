@@ -147,6 +147,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1076862206}
     - target: {fileID: 2792210000740942015, guid: 0b2ecd5a534819e4e987eae5fec5643e, type: 3}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 821200212}
+    - target: {fileID: 2792210000740942015, guid: 0b2ecd5a534819e4e987eae5fec5643e, type: 3}
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 292037448}
@@ -406,6 +410,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6284b602b3703c54c8690f67418d0034, type: 3}
+--- !u!114 &821200212 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6772910818839417451, guid: b1e1ec58d365454499a1a439f4af91e1, type: 3}
+  m_PrefabInstance: {fileID: 1617503028}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1064373902
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,6 +620,78 @@ Canvas:
   m_CorrespondingSourceObject: {fileID: 64689292793340859, guid: b1e1ec58d365454499a1a439f4af91e1, type: 3}
   m_PrefabInstance: {fileID: 1617503028}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1286436375
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3834664686416465203, guid: 33e5d90960ec0b7408a0ae5322b21444, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888530688103086241, guid: 33e5d90960ec0b7408a0ae5322b21444, type: 3}
+      propertyPath: m_Name
+      value: PumpkinSlime
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382998765554970865, guid: 33e5d90960ec0b7408a0ae5322b21444, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -29.122177
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382998765554970865, guid: 33e5d90960ec0b7408a0ae5322b21444, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15.022242
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382998765554970865, guid: 33e5d90960ec0b7408a0ae5322b21444, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 32.24904
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382998765554970865, guid: 33e5d90960ec0b7408a0ae5322b21444, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382998765554970865, guid: 33e5d90960ec0b7408a0ae5322b21444, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382998765554970865, guid: 33e5d90960ec0b7408a0ae5322b21444, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382998765554970865, guid: 33e5d90960ec0b7408a0ae5322b21444, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382998765554970865, guid: 33e5d90960ec0b7408a0ae5322b21444, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382998765554970865, guid: 33e5d90960ec0b7408a0ae5322b21444, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382998765554970865, guid: 33e5d90960ec0b7408a0ae5322b21444, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 33e5d90960ec0b7408a0ae5322b21444, type: 3}
+--- !u!114 &1477420933 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6110781232543151344, guid: b1e1ec58d365454499a1a439f4af91e1, type: 3}
+  m_PrefabInstance: {fileID: 1617503028}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1522388325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -621,6 +708,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1719690149}
+    - target: {fileID: 2127240569448135114, guid: 9e76eff8e898fb6428f816cd402d054d, type: 3}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 1477420933}
     - target: {fileID: 2127240569448135114, guid: 9e76eff8e898fb6428f816cd402d054d, type: 3}
       propertyPath: gameOverManager
       value: 
@@ -686,10 +777,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicPlayer
       objectReference: {fileID: 0}
-    - target: {fileID: 4843126217680628264, guid: d92554081e6d48f4ba4203f5973186d7, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 4008973599235894078, guid: ba07290c40f960b4cb92021af4a9d570, type: 2}
     - target: {fileID: 7357822927060879777, guid: d92554081e6d48f4ba4203f5973186d7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.92677
@@ -1367,3 +1454,4 @@ SceneRoots:
   - {fileID: 1647436600}
   - {fileID: 7135810665855620633}
   - {fileID: 6154258460554072301}
+  - {fileID: 1286436375}

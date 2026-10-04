@@ -179,6 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 10
   healthBar: {fileID: 0}
+  healthText: {fileID: 0}
   smoothSpeed: 8
   invincibilityDuration: 0.6
   playerAudio: {fileID: 658472941428310933}
@@ -212,7 +213,9 @@ MonoBehaviour:
   visualArrow: {fileID: 3406357530229490726}
   animator: {fileID: 8419302026737127229}
   bowAnimator: {fileID: 7891079977957592806}
-  isBowUnlocked: 0
+  swordImpactSFX: {fileID: 8300000, guid: e2f4a5dcfda8e3345befa09c263bbd9e, type: 3}
+  audioSource: {fileID: 2754223586913917279}
+  isBowUnlocked: 1
 --- !u!114 &3321379474417568297
 MonoBehaviour:
   m_ObjectHideFlags: 0

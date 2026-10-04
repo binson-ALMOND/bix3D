@@ -27,6 +27,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     [Header("Audio")]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip takeDamageSound;
+    
 
     [Header("Loot")]
     [SerializeField] private GameObject coinPrefab;
