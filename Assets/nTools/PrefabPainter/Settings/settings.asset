@@ -1984,8 +1984,8 @@ MonoBehaviour:
     brushes:
     - name: grass random
       settings:
-        brushRadius: 3.75
-        brushSpacing: 0.53
+        brushRadius: 20
+        brushSpacing: 1.71
         brushOverlapCheckMode: 1
         brushOverlapDistance: 0.1
         brushOverlapCheckObjects: 1
@@ -3693,15 +3693,15 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 4
-      selected: 1
+      selected: 0
       colorTag: 0
       customPreviewImage: {fileID: 0}
     - name: Pine Trees random  copy
       settings:
-        brushRadius: 20
-        brushSpacing: 4.3
+        brushRadius: 2.02
+        brushSpacing: 5
         brushOverlapCheckMode: 1
-        brushOverlapDistance: 5
+        brushOverlapDistance: 1
         brushOverlapCheckObjects: 0
         brushOverlapCheckLayers:
           serializedVersion: 2
@@ -3716,8 +3716,8 @@ MonoBehaviour:
         randomizeOrientationZ: 0
         scaleTransformMode: 0
         scaleMode: 0
-        scaleUniformMin: 3
-        scaleUniformMax: 5
+        scaleUniformMin: 2
+        scaleUniformMax: 4
         scalePerAxisMin: {x: 1, y: 1, z: 1}
         scalePerAxisMax: {x: 1, y: 1, z: 1}
         pinFixedRotation: 0
@@ -4008,7 +4008,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 0
+      selected: 1
       colorTag: 0
       customPreviewImage: {fileID: 0}
     - name: Trees random copy
