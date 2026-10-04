@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
     [Header("Punkty Życia")]
@@ -7,6 +8,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     private float currentHealth;
     [Header("UI")]
     [SerializeField] private Slider healthBar;
+    [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] private float smoothSpeed = 8f;
     [Header("I-Frames")] 
     [SerializeField] private float invincibilityDuration = 0.6f;
@@ -23,6 +25,11 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         {
             healthBar.maxValue = maxHealth;
             healthBar.value = currentHealth;
+        }
+
+        if (healthText != null)
+        {
+            healthText.text = $"{currentHealth}/{maxHealth}";
         }
     }
     void Update()
@@ -44,7 +51,10 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         lastDamageTime = Time.time;
         currentHealth -= damage;
         currentHealth = Mathf.Max(0, currentHealth);
-        
+        if (healthText != null)
+        {
+            healthText.text = $"{currentHealth}/{maxHealth}";
+        }
         if (currentHealth <= 0)
         {
             Die();

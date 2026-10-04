@@ -20,6 +20,10 @@ public class SlimeAI : MonoBehaviour
     [SerializeField] private string jumpTriggerName = "Jump";
 
     [Header("Obrażenia")] [SerializeField] private float slimeDamage = 1;
+    [Header("SFX")]
+    [SerializeField] private AudioClip walkSound;
+    [SerializeField] private AudioClip landSound;
+    [SerializeField] private AudioSource audioSource;
     
     private Transform player;
     private Rigidbody rb;
@@ -77,6 +81,7 @@ public class SlimeAI : MonoBehaviour
         if (collision.contacts.Length > 0 && collision.contacts[0].normal.y > 0.4f)
         {
             isGrounded = true;
+            if(landSound != null) audioSource.PlayOneShot(landSound);
         }
 
         if (collision.gameObject.CompareTag(playerTag))
@@ -103,5 +108,6 @@ public class SlimeAI : MonoBehaviour
         Vector3 jumpForce = (direction * jumpForwardForce) + (Vector3.up * jumpUpwardForce);
         rb.AddForce(jumpForce, ForceMode.Impulse);
         isGrounded = false;
+        if(walkSound != null) audioSource.PlayOneShot(walkSound);
     }
 }

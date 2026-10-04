@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
@@ -13,6 +14,7 @@ public class BossHealth : MonoBehaviour, IDamageable
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Canvas bossCanvas;
     [SerializeField] private GameOverManager gameOverManager;
+    [SerializeField] private TextMeshProUGUI healthText;
     [Header("Komponenty do wyłączenia po śmierci")] 
     [SerializeField] private Animator animator;
     [SerializeField] private BossAI bossAI;
@@ -28,6 +30,11 @@ public class BossHealth : MonoBehaviour, IDamageable
         {
             healthSlider.maxValue = maxHealth;
             healthSlider.value = currentHealth;
+        }
+
+        if (healthText != null)
+        {
+            healthText.text = $"{currentHealth} / {maxHealth}";
         }
         if(animator == null) animator = GetComponent<Animator>();
         if (bossAI == null) bossAI = GetComponent<BossAI>();
@@ -46,7 +53,10 @@ public class BossHealth : MonoBehaviour, IDamageable
         {
             healthSlider.value = currentHealth;
         }
-
+        if (healthText != null)
+        {
+            healthText.text = $"{currentHealth} / {maxHealth}";
+        }
         if (currentHealth <= 0)
         {
             Die();

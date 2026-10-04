@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class PlayerCombat : MonoBehaviour
 {   
@@ -31,6 +32,10 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private Animator bowAnimator;
 
+    [Header("SFX")]
+    [SerializeField] private AudioClip swordImpactSFX;
+    [SerializeField] private AudioSource audioSource;
+    
     [Header("Dostępność broni")] 
     public bool isBowUnlocked = false;
     
@@ -117,13 +122,23 @@ public class PlayerCombat : MonoBehaviour
         CameraShake.Instance.Shake(0.1f, 0.04f);
         Vector3 attackCenter = transform.position + (transform.forward * attackDistance) + (Vector3.up*0.8f);
         Collider[] hitEnemies = Physics.OverlapSphere(attackCenter, attackRadius, enemyLayers);
+        
+        HashSet<IDamageable> damagedTargets = new HashSet<IDamageable>();
+        
         foreach (Collider hit in hitEnemies)
         {
+            if (hit.gameObject == gameObject) continue;
             IDamageable target = hit.GetComponent<IDamageable>() ?? hit.GetComponentInParent<IDamageable>();
-            if (target != null && hit.gameObject != gameObject)
+            if (!damagedTargets.Contains(target))
             {
-                target.TakeDamage(swordDamage);
+                if (target != null)
+                {
+                    target.TakeDamage(swordDamage);
+                    damagedTargets.Add(target);
+                    audioSource.PlayOneShot(swordImpactSFX,0.1f);
+                }
             }
+            
         }
     }
 
