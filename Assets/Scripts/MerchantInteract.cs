@@ -5,6 +5,8 @@ public class MerchantInteract : MonoBehaviour
     private bool isPlayerInRange = false;
     private PlayerInventory playerEq;
     private PlayerHealth playerHealth;
+    [SerializeField] private AudioClip healSFX;
+    [SerializeField] private AudioSource audioSource;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -32,6 +34,7 @@ public class MerchantInteract : MonoBehaviour
             if (playerEq.TrySpendCoins(20) == true)
             {
                 playerHealth.HealToMax();
+                if(healSFX != null && audioSource != null) audioSource.PlayOneShot(healSFX,0.2f);
             }
         }
     }

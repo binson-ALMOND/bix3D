@@ -23,9 +23,14 @@ public class NpcOutlineRaycast : MonoBehaviour
                     currentOutline = hitOutline;
                     currentOutline.enabled = true;
                 }
-                if(Keyboard.current.eKey.wasPressedThisFrame)
+                if(Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
                 {
-                    QuestManager.Instance.StartSlimeQuest();
+                    bool isWizard = hitOutline.name.Contains("Wizard_NPC") || hit.transform.root.name.Contains("Wizard_NPC");
+                    if (isWizard)
+                    {
+                        QuestManager.Instance.StartSlimeQuest();
+                    }
+                    
                 }
                 return;
             }
