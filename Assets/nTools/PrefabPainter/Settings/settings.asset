@@ -5514,10 +5514,10 @@ MonoBehaviour:
       customPreviewImage: {fileID: 0}
     - name: Blue_mushroom
       settings:
-        brushRadius: 20
-        brushSpacing: 5
+        brushRadius: 2.49
+        brushSpacing: 2.39
         brushOverlapCheckMode: 1
-        brushOverlapDistance: 5
+        brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
           serializedVersion: 2
@@ -5824,15 +5824,15 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 0
+      selected: 1
       colorTag: 0
       customPreviewImage: {fileID: 0}
     - name: Green_mushroom
       settings:
-        brushRadius: 20
-        brushSpacing: 5
+        brushRadius: 2.49
+        brushSpacing: 2.39
         brushOverlapCheckMode: 1
-        brushOverlapDistance: 5
+        brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
           serializedVersion: 2
@@ -6144,10 +6144,10 @@ MonoBehaviour:
       customPreviewImage: {fileID: 0}
     - name: Yellow_mushroom
       settings:
-        brushRadius: 20
-        brushSpacing: 5
+        brushRadius: 2.49
+        brushSpacing: 2.39
         brushOverlapCheckMode: 1
-        brushOverlapDistance: 5
+        brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
           serializedVersion: 2
@@ -6459,10 +6459,10 @@ MonoBehaviour:
       customPreviewImage: {fileID: 0}
     - name: Pink_mushroom
       settings:
-        brushRadius: 20
-        brushSpacing: 5
+        brushRadius: 2.49
+        brushSpacing: 2.39
         brushOverlapCheckMode: 1
-        brushOverlapDistance: 5
+        brushOverlapDistance: 0.5
         brushOverlapCheckObjects: 1
         brushOverlapCheckLayers:
           serializedVersion: 2
@@ -6769,7 +6769,7 @@ MonoBehaviour:
       - gameObject: {fileID: 0}
       - gameObject: {fileID: 0}
       selectedSlot: 0
-      selected: 1
+      selected: 0
       colorTag: 0
       customPreviewImage: {fileID: 0}
     levelsGamma: 1
