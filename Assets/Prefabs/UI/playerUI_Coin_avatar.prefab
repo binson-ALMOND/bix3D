@@ -32,6 +32,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2077526946268356699, guid: b1e1ec58d365454499a1a439f4af91e1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
+    - target: {fileID: 2077526946268356699, guid: b1e1ec58d365454499a1a439f4af91e1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1260715531048141648, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
+    - target: {fileID: 2077526946268356699, guid: b1e1ec58d365454499a1a439f4af91e1, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2999686386431409415, guid: b1e1ec58d365454499a1a439f4af91e1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -112,6 +124,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6242205247125484404, guid: b1e1ec58d365454499a1a439f4af91e1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
+    - target: {fileID: 6242205247125484404, guid: b1e1ec58d365454499a1a439f4af91e1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1260715531048141648, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
     - target: {fileID: 7418621457544068631, guid: b1e1ec58d365454499a1a439f4af91e1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -120,6 +140,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: playerUI_Coin_avatar
       objectReference: {fileID: 0}
+    - target: {fileID: 7760732379977565667, guid: b1e1ec58d365454499a1a439f4af91e1, type: 3}
+      propertyPath: m_Name
+      value: SwordImage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242729904078427125, guid: b1e1ec58d365454499a1a439f4af91e1, type: 3}
+      propertyPath: m_Name
+      value: BowImage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560301602600348850, guid: b1e1ec58d365454499a1a439f4af91e1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
+    - target: {fileID: 8560301602600348850, guid: b1e1ec58d365454499a1a439f4af91e1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 1260715531048141648, guid: 9a14a8a1184c5f14fbce3338ea4d7a35, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

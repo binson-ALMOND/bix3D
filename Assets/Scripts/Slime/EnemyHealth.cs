@@ -13,12 +13,6 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     [SerializeField] private Slider healthBar;
     [SerializeField] private float smoothSpeed = 8f;
     private bool isDead = false;
-
-    [Header("Hit Flash")] 
-    [SerializeField] private Renderer slimeRenderer;
-    [SerializeField] private Color hitColor = Color.red;
-    private Color originalColor;
-    private Material slimeMaterial;
     
     [Header("Efekt Śmierci")]
     [SerializeField] private GameObject deathVFXPrefab;
@@ -32,9 +26,13 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     [Header("Loot")]
     [SerializeField] private GameObject coinPrefab;
     [SerializeField] private int coinsToDrop;
-    
-    
+    private HitFlash hitFlash;
 
+
+    void Awake()
+    {
+        hitFlash = GetComponent<HitFlash>();
+    }
     void Start()
     {
         currentHealth = maxHealth;
@@ -44,22 +42,11 @@ public class EnemyHealth : MonoBehaviour, IDamageable
             healthBar.maxValue = maxHealth;
             healthBar.value = maxHealth;
         }
-
-        if (slimeRenderer == null)
-        {
-            slimeRenderer = GetComponentInChildren<Renderer>();
-        }
-
-        if (slimeRenderer != null)
-        {
-            slimeMaterial = slimeRenderer.material;
-            originalColor = slimeMaterial.color;
-        }
-
         if (audioSource == null)
         {
             audioSource = GetComponent<AudioSource>();
         }
+        
     }
 
     void Update()
@@ -77,10 +64,9 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         currentHealth = Mathf.Max(0f , currentHealth);
 
         PlayHitSound();
-        if (slimeMaterial != null)
+        if (hitFlash != null)
         {
-            StopAllCoroutines();
-            StartCoroutine(FlashEffect());
+            hitFlash.Flash();
         }
         
         if (currentHealth <= 0)
@@ -89,12 +75,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         }
     }
 
-    private IEnumerator FlashEffect()
-    {
-        slimeMaterial.color = hitColor;
-        yield return new WaitForSeconds(0.1f);
-        slimeMaterial.color = originalColor;
-    }
+
 
     private void PlayHitSound()
     {

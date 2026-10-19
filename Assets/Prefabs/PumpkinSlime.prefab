@@ -405,6 +405,7 @@ GameObject:
   - component: {fileID: 4665700745001237954}
   - component: {fileID: 4605294940225559947}
   - component: {fileID: 8285324520222379007}
+  - component: {fileID: 4979457653209584832}
   m_Layer: 8
   m_Name: PumpkinSlime
   m_TagString: Untagged
@@ -517,8 +518,6 @@ MonoBehaviour:
   maxHealth: 10
   healthBar: {fileID: 6246266522665371584}
   smoothSpeed: 8
-  slimeRenderer: {fileID: 0}
-  hitColor: {r: 1, g: 0, b: 0, a: 1}
   deathVFXPrefab: {fileID: 5808144442068414626, guid: e7c36fb631a250748a5ba1689608eef0, type: 3}
   deathDuration: 0.25
   audioSource: {fileID: 8285324520222379007}
@@ -622,6 +621,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4979457653209584832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7888530688103086241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e16edb5413fae8f40b3573f02060f2dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HitFlash
+  renderers: []
+  hitColor: {r: 1, g: 0, b: 0, a: 1}
+  flashDuration: 0.1
 --- !u!1001 &7596949027636842673
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class MainMenuController : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(gameSceneName);
+        QuestManager.ResetQuestProgress();
     }
 
     public void OpenSettings()

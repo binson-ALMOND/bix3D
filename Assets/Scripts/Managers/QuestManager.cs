@@ -17,6 +17,12 @@ public class QuestManager : MonoBehaviour
     [SerializeField] private GameObject exMark;
     [SerializeField] private GameObject questMenu;
     [SerializeField] private TextMeshProUGUI questText;
+    [SerializeField] private TextMeshProUGUI questCompleteText;
+    
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip questCompleteClip;
+    private const string SLIME_QUEST_KEY = "Quest_Slime_Completed";
     private void Awake()
     {
         if (Instance == null)
@@ -34,18 +40,29 @@ public class QuestManager : MonoBehaviour
             playerCombat = FindAnyObjectByType<PlayerCombat>();
         }
         if(questMenu != null) questMenu.SetActive(false);
+        isQuestCompleted = PlayerPrefs.GetInt(SLIME_QUEST_KEY, 0) == 1;
+    }
+
+    private void Start()
+    {
+        if (isQuestCompleted)
+        {
+            if(exMark!=null) exMark.SetActive(false);
+            if(bowUI!=null) bowUI.SetActive(true);
+            if(playerCombat!=null) playerCombat.UnlockBow();
+        }
     }
 
     public void StartSlimeQuest()
     {
+        if (isQuestActive || isQuestCompleted) return;
         
         if(exMark!=null) exMark.SetActive(false);
-        if (isQuestActive || isQuestCompleted) return;
         isQuestActive = true;
         slimesKilled = 0;
+        
         if(questMenu!=null) questMenu.SetActive(true);
         UpdateQuestUI();
-
     }
 
     private void UpdateQuestUI()
@@ -69,18 +86,27 @@ public class QuestManager : MonoBehaviour
     {
         isQuestActive = false;
         isQuestCompleted = true;
-        Debug.Log("Quest Complete!");
+       
+        PlayerPrefs.SetInt(SLIME_QUEST_KEY,1);
+        PlayerPrefs.Save();
         if (playerCombat != null)
         {
             playerCombat.UnlockBow();
         }
-        
+        if(audioSource!=null) audioSource.PlayOneShot(questCompleteClip,0.2f);
         if(bowUI!=null) bowUI.SetActive(true);
+        if (questCompleteText != null) questCompleteText.gameObject.SetActive(true);
         Invoke(nameof(HideQuestMenu), 3.5f);
     }
 
     private void HideQuestMenu()
     {
         if(questMenu!=null) questMenu.SetActive(false);
+    }
+
+    public static void ResetQuestProgress()
+    {
+        PlayerPrefs.DeleteKey(SLIME_QUEST_KEY);
+        PlayerPrefs.Save();
     }
 }

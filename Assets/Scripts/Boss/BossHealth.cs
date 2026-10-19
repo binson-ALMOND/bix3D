@@ -22,6 +22,12 @@ public class BossHealth : MonoBehaviour, IDamageable
     [SerializeField] private Collider mainCollider;
     [Header("Muzyka i Walka")]
     public bool isEncounterStarted = false;
+    private HitFlash hitFlash;
+
+    void Awake()
+    {
+        hitFlash = GetComponent<HitFlash>();
+    }
     void Start()
     {
         if(bossCanvas != null) bossCanvas.gameObject.SetActive(false);
@@ -56,6 +62,11 @@ public class BossHealth : MonoBehaviour, IDamageable
         if (healthText != null)
         {
             healthText.text = $"{currentHealth} / {maxHealth}";
+        }
+
+        if (hitFlash != null)
+        {
+            hitFlash.Flash();
         }
         if (currentHealth <= 0)
         {
