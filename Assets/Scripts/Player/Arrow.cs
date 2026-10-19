@@ -7,6 +7,8 @@ public class Arrow : MonoBehaviour
     [SerializeField] private float lifetime = 5f;
     [SerializeField] private AudioSource flyAudioSource; 
     [SerializeField] private AudioClip impactSound;
+    [SerializeField] private AudioSource playerBowCueSource;
+    [SerializeField] private AudioClip bowHitCueClip;
     private Rigidbody rb;
     private bool hasHit = false;
 
@@ -28,6 +30,14 @@ public class Arrow : MonoBehaviour
         }         
     }
 
+    private void PlayBowHitCue(bool isHeadshot = false)
+    {
+        if (playerBowCueSource != null && bowHitCueClip != null)
+        {
+            playerBowCueSource.pitch = isHeadshot ? 1.35f : 1.05f;
+            playerBowCueSource.PlayOneShot(bowHitCueClip,0.1f);
+        }
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (hasHit || collision.gameObject.CompareTag("Player")) return;
@@ -38,17 +48,22 @@ public class Arrow : MonoBehaviour
             flyAudioSource.pitch = Random.Range(0.9f, 1.1f);
             AudioSource.PlayClipAtPoint(impactSound, transform.position,1);
         }
-
-        float finalDamage = damage;
-        string hitPart = collision.collider.gameObject.name;
-        if (hitPart.Contains("Head"))
-        {
-            finalDamage *= 2f;
-            Debug.Log("Headshot, dmg *2");
-        }
+    
         IDamageable target = collision.gameObject.GetComponent<IDamageable>() ?? collision.gameObject.GetComponentInParent<IDamageable>();
+
         if (target != null)
         {
+            float finalDamage = damage;
+            string hitPart = collision.collider.gameObject.name;
+            if (hitPart.Contains("Head"))
+            {   
+                PlayBowHitCue(true);
+                finalDamage *= 2f;
+            }
+            else
+            {
+                PlayBowHitCue();
+            }
             target.TakeDamage(finalDamage);
         }
 
