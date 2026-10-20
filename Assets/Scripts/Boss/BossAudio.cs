@@ -10,6 +10,7 @@ public class BossAudio : MonoBehaviour
     [SerializeField] private AudioClip bossGasp;
     [SerializeField] private AudioClip bossStep;
     [SerializeField] private AudioClip groundSlam;
+    [SerializeField] private AudioClip bossStomp;
     void Awake()
     {
         if (audioSource == null)
@@ -17,8 +18,12 @@ public class BossAudio : MonoBehaviour
             audioSource = GetComponent<AudioSource>();
         }
     }
-    
-
+    private void PlayClipWithPitch(AudioClip clip, float minPitch, float maxPitch)
+    {
+        if (clip == null) return;
+        audioSource.pitch = Random.Range(minPitch, maxPitch);
+        audioSource.PlayOneShot(clip);
+    }
     public void PlaySwingSound()
     {
         PlayClipWithPitch(clubSwing, 0.95f, 1.05f);
@@ -38,12 +43,6 @@ public class BossAudio : MonoBehaviour
     {
         PlayClipWithPitch(bossGroan, 0.9f, 1.1f);
     }
-    private void PlayClipWithPitch(AudioClip clip, float minPitch, float maxPitch)
-    {
-        if (clip == null) return;
-        audioSource.pitch = Random.Range(minPitch, maxPitch);
-        audioSource.PlayOneShot(clip);
-    }
     public void PlayStepSound()
     {
         PlayClipWithPitch(bossStep, 0.95f, 1.05f);
@@ -51,5 +50,10 @@ public class BossAudio : MonoBehaviour
     public void PlayGroundSlamSound()
     {
         PlayClipWithPitch(groundSlam, 0.95f, 1.05f);
+    }
+
+    public void PlayStompSound()
+    {
+        audioSource.PlayOneShot(bossStomp,2f);
     }
 }

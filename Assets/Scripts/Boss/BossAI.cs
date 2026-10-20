@@ -133,14 +133,18 @@ public class BossAI : MonoBehaviour
         if (Time.time >= lastMeleeTime + meleeCooldown)
         {
             lastMeleeTime = Time.time;
-
-            if (Random.value > 0.5f)
+            float random = Random.value;
+            if (random < 0.33f)
             {
                 TriggerAction("AttackLight");
             }
-            else
+            else if(random>=0.33f && random<=0.66f)
             {
                 TriggerAction("AttackWide");
+            }
+            else
+            {
+                TriggerAction("Stomp");
             }
         }
     }

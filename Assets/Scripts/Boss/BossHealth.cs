@@ -20,6 +20,7 @@ public class BossHealth : MonoBehaviour, IDamageable
     [SerializeField] private BossAI bossAI;
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Collider mainCollider;
+    [SerializeField] private Collider arenaCollider;
     [Header("Muzyka i Walka")]
     public bool isEncounterStarted = false;
     private HitFlash hitFlash;
@@ -83,7 +84,7 @@ public class BossHealth : MonoBehaviour, IDamageable
         if(agent != null) agent.enabled = false;
         if (mainCollider != null) mainCollider.enabled = false;
         if (animator != null) animator.SetTrigger("Die");
-
+        if(arenaCollider != null) arenaCollider.enabled = false;
         
         if (bossCanvas != null)
         {

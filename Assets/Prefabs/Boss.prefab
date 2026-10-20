@@ -897,6 +897,7 @@ MonoBehaviour:
   bossGasp: {fileID: 8300000, guid: 3d2228f47773c5a4e85e9bd39204dd99, type: 3}
   bossStep: {fileID: 8300000, guid: 88acb2de80b31ff438d7152572507390, type: 3}
   groundSlam: {fileID: 8300000, guid: b465aaaacd79e94408201c92ef4345f1, type: 3}
+  bossStomp: {fileID: 8300000, guid: c91ad675ce7d2b4478f9c7ee679ecf02, type: 3}
 --- !u!82 &4618233776566722881
 AudioSource:
   m_ObjectHideFlags: 0
