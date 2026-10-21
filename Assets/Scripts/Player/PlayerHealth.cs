@@ -64,6 +64,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public void HealToMax()
     {
         currentHealth = maxHealth;
+        if(healthText != null) healthText.text = $"{currentHealth}/{maxHealth}";
+       
     }
 
     private void Die()
