@@ -19,12 +19,14 @@ public class MainMenuController : MonoBehaviour
 
     public void OpenSettings()
     {
+        CloseAllPanels();
         if (settingsPanel != null) settingsPanel.SetActive(true);
         
     }
 
     public void OpenCredits()
     {
+        CloseAllPanels();
         if (creditsPanel != null) creditsPanel.SetActive(true);
         
     }
