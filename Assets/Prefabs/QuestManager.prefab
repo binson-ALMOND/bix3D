@@ -53,3 +53,6 @@ MonoBehaviour:
   exMark: {fileID: 0}
   questMenu: {fileID: 0}
   questText: {fileID: 0}
+  questCompleteText: {fileID: 0}
+  audioSource: {fileID: 0}
+  questCompleteClip: {fileID: 8300000, guid: b19c3f7c6c4c9674d9459c66a003d3fe, type: 3}

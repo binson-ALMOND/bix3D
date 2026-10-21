@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 246647653807476734}
   - component: {fileID: 3650151946078197644}
   - component: {fileID: 7753443656454733407}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: DetectionZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,6 +67,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossEncounterTrigger
   bossHealth: {fileID: 2792210000740942015}
+  bossRoot: {fileID: 3196795057570853609}
+  arenaCollider: {fileID: 0}
+  detectionCollider: {fileID: 3650151946078197644}
 --- !u!1001 &2790957490319254105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -377,6 +380,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 764102160f1c7a24b99dc36d89c38afd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6239594776096257431}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 764102160f1c7a24b99dc36d89c38afd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 574480140174848263}
     - targetCorrespondingSourceObject: {fileID: -3205905161868080641, guid: 764102160f1c7a24b99dc36d89c38afd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6767651415995281778}
@@ -559,6 +565,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.55, y: 1.54, z: 0.53}
   m_Center: {x: 0, y: 0.72, z: 0}
+--- !u!1 &3196795057570853609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4612876667495245206, guid: 764102160f1c7a24b99dc36d89c38afd, type: 3}
+  m_PrefabInstance: {fileID: 7807402036638635903}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3376309148501835547 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4430845487131940764, guid: 764102160f1c7a24b99dc36d89c38afd, type: 3}
@@ -785,7 +796,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 2.05
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -813,8 +824,8 @@ MonoBehaviour:
   meleeRange: 7
   minRangedRange: 15
   meleeCooldown: 2.5
-  slamCooldown: 8
-  screamCooldown: 12
+  slamCooldown: 10
+  screamCooldown: 4
   player: {fileID: 0}
   weaponHitbox: {fileID: 8781457368344825344}
   lightAttackDamage: 1
@@ -877,6 +888,7 @@ MonoBehaviour:
   bossAI: {fileID: 105173308451910851}
   agent: {fileID: 5574568671004107193}
   mainCollider: {fileID: 0}
+  arenaCollider: {fileID: 0}
   isEncounterStarted: 0
 --- !u!114 &3912825378832242032
 MonoBehaviour:
@@ -1010,6 +1022,31 @@ MonoBehaviour:
   renderers: []
   hitColor: {r: 1, g: 0, b: 0, a: 1}
   flashDuration: 0.1
+--- !u!114 &574480140174848263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960347414465931822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37eb28f2a0df05b45851f0eff624f31a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossStomp
+  stonePrefab: {fileID: 7782022384880476793, guid: 452881fde9e0d2149b2f27b15d282bc0, type: 3}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  numberOfWaves: 4
+  timeBetweenWaves: 0.2
+  initialRadius: 2.5
+  distanceBetweenWaves: 2
+  baseStoneCount: 8
+  extraStonesPerWave: 4
+  stoneLifetime: 3
+  minScale: {x: 0.9, y: 0.9, z: 0.9}
+  maxScale: {x: 1.2, y: 1.2, z: 1.2}
 --- !u!1 &7297620624955513099 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8566077928985047436, guid: 764102160f1c7a24b99dc36d89c38afd, type: 3}
