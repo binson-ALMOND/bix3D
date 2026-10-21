@@ -9,9 +9,6 @@ public class CoinPickup : MonoBehaviour
     [SerializeField] private float jumpHeight = 1.5f;
     [SerializeField] private float jumpDuration = 0.5f;
     [SerializeField] private float groundOffset = 0.2f;
-    
-    [Header("Dzwięk")]
-    [SerializeField] private AudioClip pickUpSound;
 
     private void Start()
     {
@@ -63,10 +60,6 @@ public class CoinPickup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PlayerInventory eq = other.GetComponent<PlayerInventory>();
-            if (pickUpSound != null)
-            {
-                AudioSource.PlayClipAtPoint(pickUpSound, transform.position,1f);
-            }
             if (eq != null)
             {
                 eq.AddCoins(1);

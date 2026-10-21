@@ -229,6 +229,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   coins: 0
+  audioSource: {fileID: 8225854708768430909}
+  coinPickUpClip: {fileID: 8300000, guid: 67159f7013e8b3143b948261ab049475, type: 3}
   coinText: {fileID: 0}
 --- !u!1 &590899533898428535
 GameObject:
